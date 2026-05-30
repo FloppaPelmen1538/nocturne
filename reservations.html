@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бронь · NOCTURNE 2026</title>
+<meta name="description" content="Забронируйте места на показы фестиваля NOCTURNE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="brand">Nocturne<sup>’26</sup></a>
+  <div class="nav-links">
+    <a href="index.html">Главная</a>
+    <a href="program.html">Программа</a>
+    <a href="reservations.html" class="is-active">Бронь</a>
+  </div>
+  <div class="nav-meta">EDITION <b>VII</b> · 14–20 SEP <b>2026</b></div>
+</nav>
+
+<header class="page-intro">
+  <div>
+    <div class="breadcrumb">NOCTURNE / <b>БРОНЬ</b></div>
+    <h1 class="reveal"><span class="out">за</span>бронируй<br>себе <em>место</em></h1>
+  </div>
+  <div class="reveal">
+    <p>Бронь бесплатная. После отправки формы — мы пришлём номер брони на email; покажите его на входе. Места в зале нумеруются по факту прихода.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:2rem">
+  <div class="form-layout">
+
+    <aside class="form-aside reveal">
+      <div class="label"><span class="dot">●</span> &nbsp; ШАГ 01 ИЗ 01</div>
+      <div class="big">Заполни форму —<br>и до встречи<br>после полуночи.</div>
+      <p>Нажмите <kbd style="font-family:var(--mono);padding:.15rem .4rem;border:1px solid var(--ink-line);border-radius:3px;font-size:.7rem">Enter</kbd> в любом поле для перехода вперёд. <kbd style="font-family:var(--mono);padding:.15rem .4rem;border:1px solid var(--ink-line);border-radius:3px;font-size:.7rem">Esc</kbd> закроет окно подтверждения.</p>
+
+      <div class="meta-block">
+        <b>МЕСТО</b>
+        Котельная «Светлая»<br>
+        ул. Каменноостровская, 12<br><br>
+        <b>СВЯЗЬ</b>
+        hello@nocturne.fest<br>
+        +371 25 470 188
+      </div>
+    </aside>
+
+    <form class="form" id="bookForm" novalidate>
+      <div class="field" data-validate="name">
+        <label for="f-name">Имя · фамилия</label>
+        <input id="f-name" name="name" type="text" required minlength="2" autocomplete="name">
+        <span class="err">Пожалуйста, укажите имя (минимум 2 символа).</span>
+      </div>
+
+      <div class="field" data-validate="email">
+        <label for="f-email">Email для брони</label>
+        <input id="f-email" name="email" type="email" required autocomplete="email">
+        <span class="err">Похоже, в адресе ошибка.</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field" data-validate="day">
+          <label for="f-day">День</label>
+          <select id="f-day" name="day" required>
+            <option value="">— выберите —</option>
+            <option value="14">14 сентября · Открытие</option>
+            <option value="15">15 сентября · Дебюты</option>
+            <option value="16">16 сентября · Эксперимент</option>
+            <option value="17">17 сентября · Документ</option>
+            <option value="18">18 сентября · Ретроспектива</option>
+            <option value="19">19 сентября · Короткий метр</option>
+            <option value="20">20 сентября · Закрытие</option>
+          </select>
+          <span class="err">Выберите день.</span>
+        </div>
+        <div class="field" data-validate="seats">
+          <label for="f-seats">Мест</label>
+          <input id="f-seats" name="seats" type="number" min="1" max="4" value="1" required>
+          <span class="err">От 1 до 4 мест.</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Что вас интересует</label>
+        <div class="checkbox-group" id="interestGroup">
+          <label><input type="checkbox" name="interest" value="screenings"><span>Показы</span></label>
+          <label><input type="checkbox" name="interest" value="talks"><span>Q&A с режиссёрами</span></label>
+          <label><input type="checkbox" name="interest" value="workshops"><span>Мастерские</span></label>
+          <label><input type="checkbox" name="interest" value="party"><span>Афтепати</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-note">Комментарий <span style="color:var(--muted);font-size:.65rem">— необязательно</span></label>
+        <textarea id="f-note" name="note" rows="3" maxlength="240" placeholder="Особые пожелания, диетические ограничения, любимый Тарковский..."></textarea>
+      </div>
+
+      <div class="live-summary" id="liveSummary" aria-live="polite">
+        Заполняйте поля — здесь появится резюме вашей брони.
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn">
+        <span>Подтвердить бронь →</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="popup-card">
+    <button class="popup-close" id="popupClose" aria-label="Закрыть">[ ESC ]</button>
+    <div class="tick">✓</div>
+    <h3>Бронь принята</h3>
+    <p>Подтверждение отправлено на ваш email. Покажите номер брони на входе — место займёте сами по факту прихода.</p>
+    <div class="ticket" id="ticketInfo">
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="big-mark"><em>Nocturne</em><sup style="font-family:var(--mono);font-style:normal;font-size:1rem;color:var(--amber);vertical-align:super">’26</sup></div>
+      <p style="color:var(--bone-soft);max-width:36ch">Независимый фестиваль ночного кино. Седьмая редакция.</p>
+    </div>
+    <div><h4>Карта</h4><ul><li><a href="index.html">Главная</a></li><li><a href="program.html">Программа</a></li><li><a href="reservations.html">Бронь</a></li></ul></div>
+    <div><h4>Адрес</h4><ul><li>Котельная «Светлая»</li><li>ул. Каменноостровская, 12</li><li>Открытие в 23:00</li></ul></div>
+    <div><h4>Контакт</h4><ul><li>hello@nocturne.fest</li><li>+371 25 470 188</li><li>Telegram → @nocturnefest</li></ul></div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 NOCTURNE FESTIVAL</span>
+    <span>Сделано вручную · без рекламы · до рассвета</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

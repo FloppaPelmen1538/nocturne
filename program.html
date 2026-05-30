@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Программа · NOCTURNE 2026</title>
+<meta name="description" content="Программа фестиваля NOCTURNE — кадры из фильмов, расписание показов по дням и залам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<nav class="nav">
+  <a href="index.html" class="brand">Nocturne<sup>’26</sup></a>
+  <div class="nav-links">
+    <a href="index.html">Главная</a>
+    <a href="program.html" class="is-active">Программа</a>
+    <a href="reservations.html">Бронь</a>
+  </div>
+  <div class="nav-meta">EDITION <b>VII</b> · 14–20 SEP <b>2026</b></div>
+</nav>
+
+<header class="page-intro">
+  <div>
+    <div class="breadcrumb">NOCTURNE / <b>ПРОГРАММА</b></div>
+    <h1 class="reveal"><span class="out">сем</span>ь<br>ночей</h1>
+  </div>
+  <div class="reveal">
+    <p>Шестнадцать фильмов, разбитых по четырём программам: ретроспектива, дебюты, документальное, эксперимент. Кадры можно листать клавишами <kbd style="font-family:var(--mono);padding:.15rem .4rem;border:1px solid var(--ink-line);border-radius:3px;font-size:.7rem">←</kbd> <kbd style="font-family:var(--mono);padding:.15rem .4rem;border:1px solid var(--ink-line);border-radius:3px;font-size:.7rem">→</kbd>, закрыть — <kbd style="font-family:var(--mono);padding:.15rem .4rem;border:1px solid var(--ink-line);border-radius:3px;font-size:.7rem">Esc</kbd>.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:3rem">
+  <div class="section-head">
+    <div>
+      <div class="num">№ 01 — ВИЗУАЛЬНЫЙ АРХИВ</div>
+      <h2>Кадры из фильмов</h2>
+    </div>
+    <div class="kbd-hint">наведите курсор · нажмите для увеличения</div>
+  </div>
+
+  <div class="gallery-layout">
+    <div class="picker" id="picker">
+      <div class="picker-title">Выберите программу</div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose">[ ESC ] закрыть</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Предыдущий">←</button>
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Следующий">→</button>
+  <div class="lightbox-media" id="lightboxMedia"></div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="num">№ 02 — РАСПИСАНИЕ</div>
+      <h2>По дням<br>и по залам</h2>
+    </div>
+    <div class="kbd-hint">нажмите день, чтобы развернуть</div>
+  </div>
+
+  <div class="accordion" id="accordion">
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="big-mark"><em>Nocturne</em><sup style="font-family:var(--mono);font-style:normal;font-size:1rem;color:var(--amber);vertical-align:super">’26</sup></div>
+      <p style="color:var(--bone-soft);max-width:36ch">Независимый фестиваль ночного кино. Седьмая редакция.</p>
+    </div>
+    <div><h4>Карта</h4><ul><li><a href="index.html">Главная</a></li><li><a href="program.html">Программа</a></li><li><a href="reservations.html">Бронь</a></li></ul></div>
+    <div><h4>Адрес</h4><ul><li>Котельная «Светлая»</li><li>ул. Каменноостровская, 12</li><li>Открытие в 23:00</li></ul></div>
+    <div><h4>Контакт</h4><ul><li>hello@nocturne.fest</li><li>+371 25 470 188</li><li>Telegram → @nocturnefest</li></ul></div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 NOCTURNE FESTIVAL</span>
+    <span>Сделано вручную · без рекламы · до рассвета</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/accordion.js"></script>
+</body>
+</html>
